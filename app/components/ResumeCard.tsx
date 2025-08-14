@@ -2,7 +2,9 @@ import React from 'react'
 import {Link} from 'react-router'
 import ScoreCircle from "~/components/ScoreCircle";
 
-const ResumeCard: () => React.JSX.Element = ({resume: {id, companyName, jobTitle, feedback, imagePath}}:{resume: Resume}) => {
+const ResumeCard: ({resume: {id, companyName, jobTitle, feedback, imagePath}}: {
+    resume: Resume
+}) => React.JSX.Element = ({resume: {id, companyName, jobTitle, feedback, imagePath}}:{resume: Resume}) => {
     return (
         <Link to={`/resume/${id}`} className = "resume-card animate-in fade-in duration-1000">
 
