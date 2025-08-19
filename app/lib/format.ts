@@ -7,6 +7,13 @@
  * @param bytes - The size in bytes to format
  * @returns A formatted string with the appropriate unit (B, KB, MB, GB, TB)
  */
+import { type ClassValue, clsx} from "clsx"
+import {twMerge} from "tailwind-merge";
+
+export function cn(p0: string, p1: string, inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
 export function formatSize(bytes: number): string {
   if (bytes === 0) return '0 B';
   if (bytes < 0) return 'Invalid size';
